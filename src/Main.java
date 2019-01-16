@@ -3,7 +3,11 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
 public class Main {
@@ -28,10 +32,45 @@ public class Main {
             doc.open();
             addMetaData(doc);
             addTitlePage(doc);
+            File file = new File("/home/aitux/Bureau/cvoce.xml");
+            InputStream stream = new ByteArrayInputStream(XMLParser.readFile("/home/aitux/Bureau/cvoce.xml", StandardCharsets.UTF_8).getBytes(StandardCharsets.UTF_8));
+            XMLParser.parse(stream);
             doc.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static void printCVPage(CV c, Document doc) {
+        Paragraph page = new Paragraph();
+        addEmptyLine(page, 1);
+        Paragraph p = new Paragraph(c.getPrenom() + " " + c.getNom(), title);
+        p.setAlignment(Element.ALIGN_CENTER);
+        page.add(p);
+        p = new Paragraph(c.getAge() + " ans", smallBold);
+        page.add(p);
+        addEmptyLine(page, 2);
+        p = new Paragraph("Date de naissance: " + c.getDob(), smallBold);
+        page.add(p);
+        p = new Paragraph("adresse: " + c.getAdresse(), smallBold);
+        page.add(p);
+        p = new Paragraph("tel: " + c.getTel(), smallBold);
+        page.add(p);
+        addEmptyLine(page, 2);
+        p = new Paragraph("Technolgies connues: ", smallBold);
+        for (String str :
+                c.getTechnos()) {
+            p.add(str + " | ");
+        }
+        page.add(p);
+        try {
+            doc.add(page);
+            doc.newPage();
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     private static void addMetaData(Document document) {

@@ -2,11 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CV {
+
     private String nom;
     private String prenom;
     private int age;
     private String dob;
     private String adresse;
+    private String tel;
     private List<String> technos = new ArrayList<>();
 
     public CV(String nom, String prenom, int age, String dob, String adresse) {
@@ -18,6 +20,18 @@ public class CV {
     }
 
     public CV() {
+    }
+
+    public List<String> getTechnos() {
+        return technos;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
     public void addTechnos(String str) {

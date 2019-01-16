@@ -1,14 +1,17 @@
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class XMLParser {
     private static void printNote(NodeList nodeList) {
@@ -54,24 +57,20 @@ public class XMLParser {
 
     }
 
+    public static String readFile(String path, Charset encoding)
+            throws IOException
+    {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, encoding);
+    }
     public static void main(String[] args) {
 
         try {
 
             File file = new File("/home/aitux/Bureau/cvoce.xml");
+            InputStream stream = new ByteArrayInputStream(readFile("/home/aitux/Bureau/cvoce.xml", StandardCharsets.UTF_8).getBytes(StandardCharsets.UTF_8));
+            parse(stream);
 
-            DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance()
-                    .newDocumentBuilder();
-
-            Document doc = dBuilder.parse(file);
-
-            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-
-            if (doc.hasChildNodes()) {
-
-                printNote(doc.getChildNodes());
-
-            }
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -79,21 +78,49 @@ public class XMLParser {
 
     }
 
-    public CV parse(String xml) {
+    public static CV parse(InputStream xml) {
+        CV c = new CV();
         try {
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = null;
-            dBuilder = dbFactory.newDocumentBuilder();
+            DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance()
+                    .newDocumentBuilder();
+
             Document doc = dBuilder.parse(xml);
-            doc.getDocumentElement().normalize();
+
             System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+            NodeList nl = doc.getElementsByTagName("donnees-personnelles");
 
+            for(int i = 0 ; i < nl.getLength(); i++){
+                Node node = nl.item(i);
+                if(node.getNodeType() == Node.ELEMENT_NODE){
+                    Element e = (Element) node;
+                    c.setNom(e.getElementsByTagName("nom").item(0).getTextContent());
+                    c.setAge(Integer.parseInt(e.getElementsByTagName("age").item(0).getTextContent()));
+                    c.setPrenom(e.getElementsByTagName("prenom").item(0).getTextContent());
+                    c.setTel(e.getElementsByTagName("telephone").item(0).getTextContent());
+                    String adresse = e.getElementsByTagName("adresse").item(0).getTextContent();
+                    adresse += " " + e.getElementsByTagName("ville").item(0).getTextContent();
+                    adresse += ", " + e.getElementsByTagName("ville").item(0).getAttributes().item(0).getTextContent();
+                    c.setAdresse(adresse);
+                    c.setDob(e.getElementsByTagName("date-de-naissance").item(0).getTextContent());
+                }
+            }
 
-        } catch (SAXException | IOException | ParserConfigurationException e) {
+            nl = doc.getElementsByTagName("environnement-technique");
+            for(int i = 0 ; i < nl.getLength(); i++){
+                Node node = nl.item(i);
+                System.out.println(node.getNodeType() == Node.ELEMENT_NODE);
+                if(node.getNodeType() == Node.ELEMENT_NODE){
+                    Element e = (Element) node;
+                    for(int k = 0 ; k < e.getElementsByTagName("technologie").getLength(); k++){
+                        c.addTechnos(e.getElementsByTagName("technologie").item(k).getAttributes().item(0).getTextContent());
+                    }
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return null;
+        return c;
     }
 
 }
