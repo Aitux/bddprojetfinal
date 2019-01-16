@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b66d76fc-be05-433a-bb0c-4576c6fb7681" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BDD.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BDD/CV.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BDD/CV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BDD/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BDD/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BDD/XMLParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BDD/XMLParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XMLParser.java" afterDir="false" />
@@ -37,7 +31,7 @@
     <session id="-1149605539">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.26" value="1" />
@@ -46,22 +40,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2559" />
+          <entry key="java" value="2918" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2559" />
+          <entry key="JAVA" value="2918" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="java" value="2" />
+          <entry key="sql" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="2" />
+          <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -71,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-44">
-              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            <state relative-caret-position="185">
+              <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/XMLParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="96" column="100" selection-start-line="96" selection-start-column="100" selection-end-line="96" selection-end-column="100" />
+            <state relative-caret-position="300">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,10 +91,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CV.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+            <state relative-caret-position="226">
+              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#311#312#0" expanded="true" />
                 <element signature="e#341#342#0" expanded="true" />
                 <element signature="e#269#270#0" expanded="true" />
                 <element signature="e#295#296#0" expanded="true" />
@@ -128,8 +125,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CV.java" />
         <option value="$PROJECT_DIR$/src/XMLParser.java" />
+        <option value="$PROJECT_DIR$/src/CV.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
@@ -140,7 +137,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="34" />
     <option name="width" value="960" />
     <option name="height" value="1046" />
@@ -172,9 +169,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="oracle" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547673219339" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547674902923" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/ojdbc6.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -233,12 +231,12 @@
       <updated>1547636022712</updated>
       <workItem from="1547636025869" duration="1816000" />
       <workItem from="1547637981769" duration="1487000" />
-      <workItem from="1547665897180" duration="7165000" />
+      <workItem from="1547665897180" duration="9101000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10468000" />
+    <option name="totallyTimeSpent" value="12404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1920" height="1046" extended-state="6" />
@@ -252,23 +250,23 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32930845" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32930845" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978093" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32930845" />
-      <window_info anchor="right" x="0" y="0" width="430" height="846" id="Documentation" sideWeight="0.5008183" side_tool="true" visible="true" weight="0.1826923" />
+      <window_info anchor="right" x="0" y="0" width="430" height="846" id="Documentation" sideWeight="0.50054884" side_tool="true" visible="true" weight="0.1826923" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="right" id="Database" order="5" sideWeight="0.49918166" visible="true" weight="0.1826923" />
+      <window_info anchor="right" id="Database" order="5" sideWeight="0.49945116" visible="true" weight="0.1826923" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
@@ -283,10 +281,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/CV.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+        <state relative-caret-position="226">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
             <element signature="e#341#342#0" expanded="true" />
             <element signature="e#269#270#0" expanded="true" />
             <element signature="e#295#296#0" expanded="true" />
@@ -302,18 +301,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/XMLParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="96" column="100" selection-start-line="96" selection-start-column="100" selection-end-line="96" selection-end-column="100" />
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f8fbaf56-b74e-415c-b632-01a784de335c/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        <state relative-caret-position="185">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

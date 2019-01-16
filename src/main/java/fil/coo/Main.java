@@ -1,13 +1,12 @@
+package fil.coo;
+
 import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
+import javax.xml.bind.annotation.XmlType;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.sql.*;
 import java.util.Date;
 
 public class Main {
@@ -25,6 +24,25 @@ public class Main {
     private static Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 12,
             Font.BOLD);
 
+    private static String clobToString(Clob data) {
+        StringBuilder sb = new StringBuilder();
+        try {
+            Reader reader = data.getCharacterStream();
+            BufferedReader br = new BufferedReader(reader);
+
+            String line;
+            while(null != (line = br.readLine())) {
+                sb.append(line);
+            }
+            br.close();
+        } catch (SQLException e) {
+            // handle this exception
+        } catch (IOException e) {
+            // handle this exception
+        }
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
         try {
             Document doc = new Document();
@@ -32,9 +50,15 @@ public class Main {
             doc.open();
             addMetaData(doc);
             addTitlePage(doc);
-            File file = new File("/home/aitux/Bureau/cvoce.xml");
-            InputStream stream = new ByteArrayInputStream(XMLParser.readFile("/home/aitux/Bureau/cvoce.xml", StandardCharsets.UTF_8).getBytes(StandardCharsets.UTF_8));
-            XMLParser.parse(stream);
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Connection c = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fil.univ-lille1.fr:1521:filora", "vandeputte","e94a0dc724");
+            PreparedStatement stmt = c.prepareStatement("select (cv).getClobVal() as cv from candidats where cv is not null");
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                String str = clobToString(rs.getClob(1));
+                InputStream stream = new ByteArrayInputStream(str.getBytes(StandardCharsets.UTF_8));
+                printCVPage(XMLParser.parse(stream), doc);
+            }
             doc.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -111,38 +135,5 @@ public class Main {
         for (int i = 0; i < number; i++) {
             paragraph.add(new Paragraph(" "));
         }
-    }
-
-    private static void createTable(Section subCatPart)
-            throws BadElementException {
-        PdfPTable table = new PdfPTable(3);
-
-        // t.setBorderColor(BaseColor.GRAY);
-        // t.setPadding(4);
-        // t.setSpacing(4);
-        // t.setBorderWidth(1);
-
-        PdfPCell c1 = new PdfPCell(new Phrase("Table Header 1"));
-        c1.setHorizontalAlignment(Element.ALIGN_CENTER);
-        table.addCell(c1);
-
-        c1 = new PdfPCell(new Phrase("Table Header 2"));
-        c1.setHorizontalAlignment(Element.ALIGN_CENTER);
-        table.addCell(c1);
-
-        c1 = new PdfPCell(new Phrase("Table Header 3"));
-        c1.setHorizontalAlignment(Element.ALIGN_CENTER);
-        table.addCell(c1);
-        table.setHeaderRows(1);
-
-        table.addCell("1.0");
-        table.addCell("1.1");
-        table.addCell("1.2");
-        table.addCell("2.1");
-        table.addCell("2.2");
-        table.addCell("2.3");
-
-        subCatPart.add(table);
-
     }
 }

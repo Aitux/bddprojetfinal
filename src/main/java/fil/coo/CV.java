@@ -1,3 +1,5 @@
+package fil.coo;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +21,7 @@ public class CV {
         this.adresse = adresse;
     }
 
-    public CV() {
-    }
+    public CV() {}
 
     public List<String> getTechnos() {
         return technos;
