@@ -3,7 +3,6 @@ package fil.coo;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import javax.xml.bind.annotation.XmlType;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.sql.*;
@@ -31,7 +30,7 @@ public class Main {
             BufferedReader br = new BufferedReader(reader);
 
             String line;
-            while(null != (line = br.readLine())) {
+            while (null != (line = br.readLine())) {
                 sb.append(line);
             }
             br.close();
@@ -44,6 +43,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
         try {
             Document doc = new Document();
             PdfWriter.getInstance(doc, new FileOutputStream(FILE));
@@ -51,13 +51,52 @@ public class Main {
             addMetaData(doc);
             addTitlePage(doc);
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection c = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fil.univ-lille1.fr:1521:filora", "vandeputte","e94a0dc724");
+            Connection c = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fil.univ-lille1.fr:1521:filora", "vandeputte", "e94a0dc724");
             PreparedStatement stmt = c.prepareStatement("select (cv).getClobVal() as cv from candidats where cv is not null");
+            PreparedStatement id = c.prepareStatement("SELECT idcand from candidats where nom=?");
+            PreparedStatement note = c.prepareStatement("SELECT id_epreuve, note from notes where idcand = ?");
+            PreparedStatement voeux = c.prepareStatement("SELECT ide from voeux where idc=?");
             ResultSet rs = stmt.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
+                int idcand = 0;
                 String str = clobToString(rs.getClob(1));
                 InputStream stream = new ByteArrayInputStream(str.getBytes(StandardCharsets.UTF_8));
-                printCVPage(XMLParser.parse(stream), doc);
+                CV cv = XMLParser.parse(stream);
+                Paragraph page = printCVPage(cv);
+                String nom = cv.getNom().toLowerCase();
+                char[] stringArray = nom.trim().toCharArray();
+                stringArray[0] = Character.toUpperCase(stringArray[0]);
+                nom = new String(stringArray);
+                cv.setNom(nom);
+                id.setString(1, cv.getNom());
+                ResultSet rs1 = id.executeQuery();
+                if (rs1.next())
+                    idcand = rs1.getInt(1);
+                note.setInt(1, idcand);
+                ResultSet rs2 = note.executeQuery();
+                Paragraph p = new Paragraph("Epreuve | Note");
+                page.add(p);
+                while(rs2.next()) {
+                    p = new Paragraph(rs2.getInt(1) + " | " + rs2.getDouble(2));
+                    page.add(p);
+                }
+
+                voeux.setInt(1,idcand);
+                ResultSet rs3 = voeux.executeQuery();
+                addEmptyLine(page,2);
+                p = new Paragraph("Voeux (par ordre de priorité):");
+                page.add(p);
+                while(rs3.next()){
+                     p = new Paragraph("Ecole " + rs3.getInt(1));
+                     page.add(p);
+                }
+
+                try {
+                    doc.add(page);
+                    doc.newPage();
+                } catch (DocumentException e) {
+                    e.printStackTrace();
+                }
             }
             doc.close();
         } catch (Exception e) {
@@ -65,7 +104,7 @@ public class Main {
         }
     }
 
-    private static void printCVPage(CV c, Document doc) {
+    private static Paragraph printCVPage(CV c) {
         Paragraph page = new Paragraph();
         addEmptyLine(page, 1);
         Paragraph p = new Paragraph(c.getPrenom() + " " + c.getNom(), title);
@@ -87,12 +126,7 @@ public class Main {
             p.add(str + " | ");
         }
         page.add(p);
-        try {
-            doc.add(page);
-            doc.newPage();
-        } catch (DocumentException e) {
-            e.printStackTrace();
-        }
+        return page;
 
 
     }
