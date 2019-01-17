@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="b66d76fc-be05-433a-bb0c-4576c6fb7681" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/fil/coo/MyConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fil/coo/MyConnection.java" afterDir="false" />
+=======
+    <list default="true" id="a85c3362-f62f-4ddd-8fa8-62929bb423b1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/itextpdf_5_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
       <change beforePath="$PROJECT_DIR$/src/main/java/fil/coo/PDFBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fil/coo/PDFBuilder.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,6 +22,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_DATA_SOURCES" value="true" />
@@ -57,41 +67,10 @@
     </expand>
     <select />
   </component>
+=======
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
   <component name="FUSProjectUsageTrigger">
-    <session id="-1149605539">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.22" value="1" />
-          <entry key="project.open.time.26" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="2918" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="2918" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="2" />
-          <entry key="sql" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="2" />
-          <entry key="Scratch" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-1577928649">
+    <session id="819477770">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.0" value="1" />
@@ -100,39 +79,61 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="4" />
-          <entry key="sql" value="1" />
-          <entry key="xml" value="1" />
+          <entry key="java" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="4" />
-          <entry key="Scratch" value="1" />
-          <entry key="XML" value="1" />
+          <entry key="JAVA" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="dummy" value="10" />
           <entry key="java" value="1470" />
+=======
+          <entry key="java" value="251" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="JAVA" value="1470" />
           <entry key="PLAIN_TEXT" value="10" />
+=======
+          <entry key="JAVA" value="251" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/PDFBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="412">
               <caret line="157" column="20" selection-start-line="157" selection-start-column="20" selection-end-line="157" selection-end-column="20" />
+=======
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/XMLParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-406">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/PDFBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="178" column="48" selection-start-line="178" selection-start-column="48" selection-end-line="178" selection-end-column="48" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
             </state>
           </provider>
         </entry>
@@ -140,54 +141,54 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/MyConnection.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="141">
               <caret line="18" column="96" selection-start-line="18" selection-start-column="96" selection-end-line="18" selection-end-column="96" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="60">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/App.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/CV.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-              <folding>
-                <element signature="e#114#115#0" expanded="true" />
-                <element signature="e#148#149#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/XMLParser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-240">
               <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Singleton" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Technolgie</find>
-      <find>candidats</find>
+      <find>Océane Pruvost</find>
     </findStrings>
     <replaceStrings>
-      <replace>candidat</replace>
+      <replace>Océane Pruvost</replace>
+      <replace>Simon Vandeputte</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -196,6 +197,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/XMLParser.java" />
         <option value="$PROJECT_DIR$/src/CV.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
@@ -203,20 +205,23 @@
         <option value="$PROJECT_DIR$/src/main/java/fil/coo/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/fil/coo/XMLParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/fil/coo/MyConnection.java" />
+=======
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
         <option value="$PROJECT_DIR$/src/main/java/fil/coo/PDFBuilder.java" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
     <option name="y" value="31" />
     <option name="width" value="1920" />
     <option name="height" value="1049" />
+=======
+    <option name="x" value="966" />
+    <option name="y" value="31" />
+    <option name="width" value="954" />
+    <option name="height" value="995" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -228,29 +233,29 @@
         <subPane>
           <expand>
             <path>
-              <item name="bddprojetfinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bddfinal" type="b2602c69:ProjectViewProjectNode" />
               <item name="bddprojetfinal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="bddprojetfinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bddfinal" type="b2602c69:ProjectViewProjectNode" />
               <item name="bddprojetfinal" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="bddprojetfinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bddfinal" type="b2602c69:ProjectViewProjectNode" />
               <item name="bddprojetfinal" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="bddprojetfinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bddfinal" type="b2602c69:ProjectViewProjectNode" />
               <item name="bddprojetfinal" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="bddprojetfinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bddfinal" type="b2602c69:ProjectViewProjectNode" />
               <item name="bddprojetfinal" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -266,14 +271,19 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="DatabaseDriversLRU" value="oracle" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547733770229" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/ojdbc6.jar!/" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547733161637" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/ojdbc6.jar!/" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -287,6 +297,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fil.coo.App" />
@@ -313,6 +324,11 @@
     </configuration>
     <configuration name="PDFBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fil.coo.PDFBuilder" />
+=======
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fil.coo.App" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
       <module name="bddfinal" />
       <extension name="coverage">
         <pattern>
@@ -324,6 +340,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="XMLParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="XMLParser" />
       <module name="BDD" />
@@ -390,6 +407,11 @@
         <item itemvalue="Application.PDFBuilder" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.XMLParser" />
+=======
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
       </list>
     </recent_temporary>
   </component>
@@ -398,10 +420,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b66d76fc-be05-433a-bb0c-4576c6fb7681" name="Default Changelist" comment="" />
-      <created>1547636022712</created>
+      <changelist id="a85c3362-f62f-4ddd-8fa8-62929bb423b1" name="Default Changelist" comment="" />
+      <created>1547731366979</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1547636022712</updated>
       <workItem from="1547636025869" duration="1816000" />
       <workItem from="1547637981769" duration="1487000" />
@@ -413,32 +436,52 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="17390000" />
   </component>
+=======
+      <updated>1547731366979</updated>
+    </task>
+    <servers />
+  </component>
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
   <component name="ToolWindowManager">
-    <frame x="0" y="31" width="1920" height="1049" extended-state="6" />
+    <frame x="0" y="31" width="1920" height="995" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1189968" />
+=======
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.32945284" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32858709" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978093" />
+=======
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.12223516" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32968238" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32858709" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+<<<<<<< HEAD
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Database" order="5" sideWeight="0.49945116" visible="true" weight="0.19690502" />
@@ -446,15 +489,15 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="right" x="0" y="0" width="430" height="846" id="Documentation" order="9" sideWeight="0.50054884" side_tool="true" visible="true" weight="0.1826923" />
+=======
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
     </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/CV.java" />
     <entry file="file://$PROJECT_DIR$/src/XMLParser.java" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f8fbaf56-b74e-415c-b632-01a784de335c/console.sql" />
@@ -464,39 +507,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/CV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding>
-            <element signature="e#114#115#0" expanded="true" />
-            <element signature="e#148#149#0" expanded="true" />
-          </folding>
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/XMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/MyConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/XMLParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/MyConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="141">
           <caret line="18" column="96" selection-start-line="18" selection-start-column="96" selection-end-line="18" selection-end-column="96" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="-406">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fil/coo/PDFBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="412">
           <caret line="157" column="20" selection-start-line="157" selection-start-column="20" selection-end-line="157" selection-end-column="20" />
+=======
+        <state relative-caret-position="544">
+          <caret line="178" column="48" selection-start-line="178" selection-start-column="48" selection-end-line="178" selection-end-column="48" />
+>>>>>>> 55737dc5ec5f86a742b44ded556aa48d455ccdda
         </state>
       </provider>
     </entry>
@@ -557,7 +621,18 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
