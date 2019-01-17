@@ -3,6 +3,7 @@ package fil.coo;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
 
+import javax.xml.transform.Result;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.sql.*;
@@ -10,17 +11,14 @@ import java.util.Date;
 
 public class PDFBuilder
 {
-
     private static String FILE = "/home/m1miage/vandeputte/Desktop/MiageBook.pdf";
     private static Font title = new Font(Font.FontFamily.TIMES_ROMAN, 42,
             Font.BOLD);
-    private static Font catFont = new Font(Font.FontFamily.TIMES_ROMAN, 18,
-            Font.BOLD);
+
     private static Font redFont = new Font(Font.FontFamily.TIMES_ROMAN, 12,
             Font.NORMAL, BaseColor.RED);
     private static Font legend = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.GRAY);
-    private static Font subFont = new Font(Font.FontFamily.TIMES_ROMAN, 16,
-            Font.BOLD);
+
     private static Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 12,
             Font.BOLD);
 
@@ -57,10 +55,14 @@ public class PDFBuilder
             addMetaData(doc);
             addTitlePage(doc);
             Connection c = MyConnection.getInstance().getConnection();
-            PreparedStatement stmt = c.prepareStatement("select photoid, (cv).getClobVal() as cv from candidat where cv is not null AND PHOTOID is not null");
+            PreparedStatement stmt = c.prepareStatement("select photoid, (cv).getClobVal() as cv, rang from candidat where cv is not null AND PHOTOID is not null");
             PreparedStatement id = c.prepareStatement("SELECT id from candidat where nom=?");
             PreparedStatement note = c.prepareStatement("SELECT id_epreuve, note from notes where ID_CANDIDAT = ?");
             PreparedStatement voeux = c.prepareStatement("SELECT ide from voeux where idc=?");
+            PreparedStatement admis = c.prepareStatement("select voeux.IDE, REFCANDIDAT, (select min(RANG) from preadmin where refecole = voeux.IDE) as min_rang, (select max(RANG) from preadmin where refecole = voeux.IDE) as max_rang\n" +
+                    "from preadmin " +
+                    "right join voeux on preadmin.REFCANDIDAT=voeux.IDC " +
+                    "where IDC = ?");
             ResultSet rs = stmt.executeQuery();
             while (rs.next())
             {
@@ -77,7 +79,9 @@ public class PDFBuilder
                 image.scaleAbsolute(125, 125);
                 image.setAlignment(Element.ALIGN_RIGHT);
                 page.add(image);
-                Paragraph p = printCVPage(cv);
+                Paragraph p = new Paragraph("Rang " + rs.getInt(3));
+                page.add(p);
+                p = printCVPage(cv);
                 page.add(p);
 
                 String nom = cv.getNom().toLowerCase();
@@ -110,6 +114,12 @@ public class PDFBuilder
                     page.add(p);
                 }
 
+                admis.setInt(1,idcand);
+                System.out.println(idcand);
+                addEmptyLine(page, 2);
+                page.add("Admission: ");
+                page.add(admis(admis.executeQuery()));
+
                 try
                 {
                     doc.add(page);
@@ -121,10 +131,36 @@ public class PDFBuilder
             }
             MyConnection.getInstance().close(c);
             doc.close();
+            System.out.println("[DONE] PDF PROPERLY GENERATED AT {"+FILE+"}");
         } catch (Exception e)
+        {
+            System.out.println("[FAILURE] SOMETHING WENT WRONG");
+            e.printStackTrace();
+        }
+    }
+
+    private static Paragraph admis(ResultSet rs){
+        try
+        {
+            Paragraph c = new Paragraph();
+            Paragraph p = null;
+            while(rs.next())
+            {
+                p = new Paragraph("Ecole " + rs.getInt(1));
+                if (rs.getInt(2) == 0)
+                    p.add(" | Non-Admis");
+                else
+                    p.add(" | Admis");
+
+                p.add(" | Premier admis dans l'école: " + rs.getInt(3) + " | Dernier admis dans l'école: " + rs.getInt(4));
+                c.add(p);
+            }
+            return c;
+        } catch (SQLException e)
         {
             e.printStackTrace();
         }
+        return null;
     }
 
     private static Paragraph printCVPage(CV c)
@@ -152,8 +188,6 @@ public class PDFBuilder
         }
         page.add(p);
         return page;
-
-
     }
 
     private static void addMetaData(Document document)
@@ -182,6 +216,7 @@ public class PDFBuilder
                 "PDF généré par Simon Vandeputte, le " + new Date().toLocaleString(), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
                 legend));
         addEmptyLine(preface, 3);
+        preface.add(new Paragraph("Les personnes n'ayant pas leur CV et leur photo de disponible n'apparaissent pas dans le book !", redFont));
         preface.add(new Paragraph(
                 "",
                 smallBold));
