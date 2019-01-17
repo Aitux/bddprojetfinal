@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BDD.iml" filepath="$PROJECT_DIR$/BDD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bddfinal.iml" filepath="$PROJECT_DIR$/bddfinal.iml" />
     </modules>
   </component>
 </project>
