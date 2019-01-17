@@ -11,7 +11,7 @@ import java.util.Date;
 public class PDFBuilder
 {
 
-    private static String FILE = "/home/m1miage/vandeputte/Desktop/MiageBook.pdf";
+    private static String FILE = "/home/m1miage/pruvost/Documents/MiageBook.pdf";
     private static Font title = new Font(Font.FontFamily.TIMES_ROMAN, 42,
             Font.BOLD);
     private static Font catFont = new Font(Font.FontFamily.TIMES_ROMAN, 18,
@@ -61,54 +61,45 @@ public class PDFBuilder
             PreparedStatement id = c.prepareStatement("SELECT id from candidat where nom=?");
             PreparedStatement note = c.prepareStatement("SELECT id_epreuve, note from notes where ID_CANDIDAT = ?");
             PreparedStatement voeux = c.prepareStatement("SELECT ide from voeux where idc=?");
+
             ResultSet rs = stmt.executeQuery();
             while (rs.next())
             {
                 int idcand = 0;
-
                 String str = clobToString(rs.getClob(2));
                 InputStream stream = new ByteArrayInputStream(str.getBytes(StandardCharsets.UTF_8));
-
                 CV cv = XMLParser.parse(stream);
                 Paragraph page = new Paragraph();
-                Blob imageBlob = rs.getBlob(1);
-                byte[] imageBytes = imageBlob.getBytes(1, (int) imageBlob.length());
-                Image image = Image.getInstance(imageBytes);
-                image.scaleAbsolute(125, 125);
-                image.setAlignment(Element.ALIGN_RIGHT);
-                page.add(image);
-                Paragraph p = printCVPage(cv);
-                page.add(p);
+
+                page.add(getImageBlob(rs.getBlob(1)));
+                page.add(printCVPage(cv));
 
                 String nom = cv.getNom().toLowerCase();
                 char[] stringArray = nom.trim().toCharArray();
                 stringArray[0] = Character.toUpperCase(stringArray[0]);
-                nom = new String(stringArray);
-                cv.setNom(nom);
+
+                cv.setNom(new String(stringArray));
                 id.setString(1, cv.getNom());
+
                 ResultSet rs1 = id.executeQuery();
                 if (rs1.next())
                     idcand = rs1.getInt(1);
+
                 note.setInt(1, idcand);
                 ResultSet rs2 = note.executeQuery();
-                p = new Paragraph("Epreuve | Note");
-                page.add(p);
+
+                page.add(new Paragraph("Epreuve | Note"));
+
                 while (rs2.next())
-                {
-                    p = new Paragraph(rs2.getInt(1) + " | " + rs2.getDouble(2));
-                    page.add(p);
-                }
+                    page.add(new Paragraph(rs2.getInt(1) + " | " + rs2.getDouble(2)));
 
                 voeux.setInt(1, idcand);
                 ResultSet rs3 = voeux.executeQuery();
                 addEmptyLine(page, 2);
-                p = new Paragraph("Voeux (par ordre de priorité):");
-                page.add(p);
+
+                page.add(new Paragraph("Voeux (par ordre de priorité):"));
                 while (rs3.next())
-                {
-                    p = new Paragraph("Ecole " + rs3.getInt(1));
-                    page.add(p);
-                }
+                    page.add(new Paragraph("Ecole " + rs3.getInt(1)));
 
                 try
                 {
@@ -127,6 +118,17 @@ public class PDFBuilder
         }
     }
 
+    private static Image getImageBlob(Blob blob) throws IOException, BadElementException, SQLException
+    {
+        Blob imageBlob = blob;
+        byte[] imageBytes = imageBlob.getBytes(1, (int) imageBlob.length());
+        Image image = Image.getInstance(imageBytes);
+        image.scaleAbsolute(125, 125);
+        image.setAlignment(Element.ALIGN_RIGHT);
+        return image;
+    }
+
+
     private static Paragraph printCVPage(CV c)
     {
         Paragraph page = new Paragraph();
@@ -134,19 +136,14 @@ public class PDFBuilder
         Paragraph p = new Paragraph(c.getPrenom() + " " + c.getNom(), title);
         p.setAlignment(Element.ALIGN_CENTER);
         page.add(p);
-        p = new Paragraph(c.getAge() + " ans", smallBold);
-        page.add(p);
+        page.add( new Paragraph(c.getAge() + " ans", smallBold));
         addEmptyLine(page, 2);
-        p = new Paragraph("Date de naissance: " + c.getDob(), smallBold);
-        page.add(p);
-        p = new Paragraph("adresse: " + c.getAdresse(), smallBold);
-        page.add(p);
-        p = new Paragraph("tel: " + c.getTel(), smallBold);
-        page.add(p);
+        page.add(new Paragraph("Date de naissance: " + c.getDob(), smallBold));
+        page.add(new Paragraph("adresse: " + c.getAdresse(), smallBold));
+        page.add(new Paragraph("tel: " + c.getTel(), smallBold));
         addEmptyLine(page, 2);
         p = new Paragraph("Technologies connues: ", smallBold);
-        for (String str :
-                c.getTechnos())
+        for (String str : c.getTechnos())
         {
             p.add(str + " | ");
         }
@@ -195,8 +192,6 @@ public class PDFBuilder
     private static void addEmptyLine(Paragraph paragraph, int number)
     {
         for (int i = 0; i < number; i++)
-        {
             paragraph.add(new Paragraph(" "));
-        }
     }
 }
